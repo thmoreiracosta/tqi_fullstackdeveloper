@@ -1,0 +1,90 @@
+@font-face {
+  font-family: 'Acme', sans-serif;
+  font-family: 'DM Sans', sans-serif;
+  src: url('https://fonts.googleapis.com/css2?family=Acme&family=DM+Sans:wght@400;700&display=swap');
+}
+
+body {
+  font-family: sans-serif;
+  background-color: rgb(47, 58, 101);
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 800px;
+  height: 500px;
+  background-image: url('./assets/img/landscape.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: grayscale(0.5);
+  color: white;
+  transition: 0.3s;
+}
+
+.card-wrapper {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;  
+  cursor: pointer;
+}
+
+.card-wrapper::before {
+  content: '';
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  display: block;
+  border: 1px solid white;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.card-wrapper h2 {
+  font-family: Acme, sans-serif;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin: 0;
+  transform: 0.3s;
+}
+
+.card-wrapper p {
+  font-family: Acme, sans-serif;
+  font-size: 2rem;
+  visibility: hidden;
+  opacity: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+.card:hover {
+  filter: unset;
+}
+
+.card:hover > .card-wrapper::before {
+  height: 300px;
+  width: 400px;
+  opacity: 1;
+}
+
+.card:hover > .card-wrapper p {
+  opacity: 1;
+  visibility: visible;
+  font-size: 14px;
+}
