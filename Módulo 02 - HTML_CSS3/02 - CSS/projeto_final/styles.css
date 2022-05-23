@@ -17,7 +17,7 @@ body {
 .header-wrapper {
   height: 100vh;
   width: 100%;
-  background: linear-gradient(-45deg, #5e0878, #085078, #158e80, #142142);
+  background: linear-gradient(-45deg, #5e0878, #085078, #158e80, #cfceab);
   background-size: 400% 400%;
   display: flex;
   flex-direction: column;
@@ -49,6 +49,10 @@ h2 {
   justify-content: center;
   align-items: center;
   transition: 0.5s cubic-bezier(0.55, 0.025, 0.675, 0.97);
+}
+
+.social-media a img {
+  margin-bottom: 1rem;
 }
 
 a .img {
@@ -193,7 +197,7 @@ a:hover {
 }
 
 #toggle:checked ~ .menu {
-  box-shadow: 0 -100vh 0 190vh rgb(194, 189, 189);
+  box-shadow: 1vh -98vh 1vw 185vh rgb(194, 189, 189);
   z-index: 1;
 }
 
@@ -246,7 +250,6 @@ a:hover {
   letter-spacing: 4px;
   margin: 0;
   transition: 0.3s;
-  
 }
 
 .card1 p {
@@ -256,7 +259,6 @@ a:hover {
   font-weight: bold;
   text-transform: uppercase;
   transition: 0.3s;
-  
 }
 
 .card2 {
@@ -440,12 +442,14 @@ footer {
 footer nav p {
   color: white;
   font-size: 0.8rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 footer nav .copyright {
   color: white;
-  font-size: 0.65rem;
-  margin: 20px 0px;
+  font-size: 0.7rem;
+  margin: 20px 6px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 footer nav ul li a {
@@ -453,7 +457,9 @@ footer nav ul li a {
 }
 
 footer nav .info-contato li a {
-  font-size: 0.75rem;
+  font-size: 0.85rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-left: -1.9rem;
 }
 
 footer nav .redes-sociais {
@@ -516,7 +522,7 @@ footer nav .redes-sociais li a img {
   .card-container {
     flex-direction: column;
   }
-  
+
   .container .card-container:nth-child(1),
   .container .card-container:nth-child(3) {
     flex-direction: column-reverse;
@@ -525,7 +531,6 @@ footer nav .redes-sociais li a img {
   .card {
     height: 250px;
     width: 250px;
-
   }
 
   .card-text {
@@ -533,4 +538,22 @@ footer nav .redes-sociais li a img {
     margin-top: 2rem;
     text-align: center;
   }
-  
+
+  footer nav p {
+    font-size: 1rem;
+    padding: 0.7rem;
+  }
+
+  footer nav .copyright {
+    font-size: 0.6rem;
+  }
+
+  footer nav .redes-sociais li a img {
+    width: 25px;
+  }
+
+  footer nav .redes-sociais li {
+    margin-left: -0.4rem;
+    text-align: center;
+  }
+}
