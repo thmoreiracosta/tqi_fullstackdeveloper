@@ -1,0 +1,79 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  /* display: flex; */
+  background-color: rgb(214, 194, 16);
+}
+
+.img-responsive {
+  max-width: auto;
+  max-height: auto;
+  width: 105vmax;
+  height: 105%;
+  display: flex;
+  position: fixed;
+  z-index: -1;
+}
+
+.memory-game {
+  height: 680px;
+  width: 680px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+
+.card {
+  height: calc(33.333% - 10px);
+  width: calc(25% - 10px);
+  margin: 5px;
+  position: relative;
+  box-shadow: 1px 1px 20px rgba(1, 1, 1, 0.3);
+  cursor: pointer;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform 0.9s;
+}
+
+.card:active {
+  transform: scale(0.97);
+  transition: transform 0.3s;
+}
+
+.card-front,
+.card-back {
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  position: absolute;
+  border-radius: 8px;
+  background: rgb(121, 221, 7);
+  backface-visibility: hidden;
+}
+
+.card-front {
+  transform: rotateY(180deg);
+}
+
+.footer {
+  background-color: rgb(0, 0, 0);
+  /* position:static; */
+  margin-top: 230px;
+  padding: 20px;
+  color: white;
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* FLIP-CARD */
+
+.card.flip {
+  transform: rotateY(180deg);
+}
