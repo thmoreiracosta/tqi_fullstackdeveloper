@@ -1,4 +1,5 @@
 import Counter from '../Counter/Counter'
+import IfoodCounter from '../IfoodCounter/IfoodCounter'
 import SmarthCounter from '../SmarthCounter/SmarthCounter'
 import './App.css'
 
@@ -8,6 +9,7 @@ function App() {
       <h1>Hello World!</h1>
       <Counter />
       <SmarthCounter />
+      <IfoodCounter />
     </>
   )
 }
