@@ -8,7 +8,9 @@
 //     return;
 //   }
 
-import { FormEvent, useEffect, useState } from "react";
+import { useQuery } from "@apollo/client";
+import { FormEvent, useState } from "react";
+
 
 
 //   buttonPerguntar.setAttribute("disabled", true);
@@ -65,19 +67,9 @@ interface GetFrasesQueryResponse {
 
 
 export function FrasesDeSantos(props: GetFrasesQueryResponse) {
+  const [userData, setUserData] = useState<GetFrasesQueryResponse>();
 
-  const [userData, setUserData] = useState<GetFrasesQueryResponse>(props);
-
-
-  const handleSubmit = (event: FormEvent) => {
-    event.preventDefault();
-    fetch(`${GET_QUERY_BY_SANTOS}`)
-    .then(response => response.json())
-    .then(userResponse => setUserData(userResponse))
-  }
-
-
-  
+  const handleSubmit = useQuery<GetFrasesQueryResponse>(props);
 
 
   return (
@@ -85,7 +77,7 @@ export function FrasesDeSantos(props: GetFrasesQueryResponse) {
 
       <img
         className="rounded-full mt-16 w-56 h-96 flex justify-center items-center"
-        src={props?.frases.imageSanto.url}
+        src=""
         alt=""
       />
 
@@ -96,18 +88,16 @@ export function FrasesDeSantos(props: GetFrasesQueryResponse) {
         id nesciunt consectetur a assumenda labore quisquam.
         A nesciunt atque, animi necessitatibus doloribus eius unde corporis. Inventore, perferendis.
       </span>
-      <form 
-      onSubmit={handleSubmit}
-      action="
-      ">
-        <button
-          className="bg-blue-400 rounded-sm p-2 w-[150px] mt-4"
-          id="buttonPerguntar"
-        >
-          Clique aqui!
-        </button>
 
-      </form>
+      <button
+        onClick={handleSubmit}
+        type="submit"
+        className="bg-blue-400 rounded-sm p-2 w-[150px] mt-4"
+      >
+        Clique aqui!
+      </button>
+
+
 
       <h3 id="resposta"></h3>
     </div>
